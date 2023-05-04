@@ -13,7 +13,7 @@ function reportInvalid(dom, message) {
 }
 
 function getValues(fields, domFields) {
-  let result = Object.keys(fields)
+  return Object.keys(fields)
     .filter((name, index) => {
       let field = fields[name];
       let dom = domFields[index];
@@ -30,7 +30,6 @@ function getValues(fields, domFields) {
       acc[name] = field.clean(value);
       return acc;
     }, {});
-  return result;
 }
 
 export function openPrompt(options) {

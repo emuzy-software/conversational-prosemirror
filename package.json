@@ -1,24 +1,24 @@
 {
-  "name": "@chatwoot/prosemirror-schema",
+  "name": "@halv/conversational-prosemirror",
   "version": "1.0.0",
-  "description": "Schema setup for using prosemirror in chatwoot. Based on 👉 https://github.com/ProseMirror/prosemirror-example-setup/",
+  "description": "Schema setup for using prosemirror in conversational omnichannel. Based on 👉 https://github.com/ProseMirror/prosemirror-example-setup/",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chatwoot/prosemirror-schema.git"
+    "url": "git+https://github.com/emuzy-software/conversational-prosemirror.git"
   },
   "files": [
     "src/*"
   ],
-  "author": "Nithin David <nithin@chatwoot.com>",
+  "author": "halv <lehatybg1@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chatwoot/prosemirror-schema/issues"
+    "url": "https://github.com/emuzy-software/conversational-prosemirror/issues"
   },
-  "homepage": "https://github.com/chatwoot/prosemirror-schema#readme",
+  "homepage": "https://github.com/emuzy-software/conversational-prosemirror#readme",
   "dependencies": {
     "prosemirror-commands": "^1.1.4",
     "prosemirror-dropcursor": "^1.3.2",
@@ -36,6 +36,6 @@
     "prosemirror-view": "^1.17.2"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@chatwoot"
+    "registry": "https://npm.pkg.github.com/@halv"
   }
 }

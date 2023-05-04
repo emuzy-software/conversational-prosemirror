@@ -5,19 +5,13 @@ import { gapCursor } from 'prosemirror-gapcursor';
 import { menuBar } from 'prosemirror-menu';
 
 import Placeholder from './Placeholder';
-
-export { EditorState, Selection } from 'prosemirror-state';
-export { EditorView } from 'prosemirror-view';
-import {
-  listInputRules,
-  linksInputRules,
-  blocksInputRule,
-  baseKeyMaps,
-  textFormattingInputRules,
-} from './rules';
+import { baseKeyMaps, blocksInputRule, linksInputRules, listInputRules, textFormattingInputRules } from './rules';
 
 import { buildArticleEditorMenu } from './menu/article';
 import { buildMessageEditorMenu } from './menu/message';
+
+export { EditorState, Selection } from 'prosemirror-state';
+export { EditorView } from 'prosemirror-view';
 
 export { MessageMarkdownTransformer } from './schema/markdown/messageParser';
 export { ArticleMarkdownTransformer } from './schema/markdown/articleParser';
@@ -28,8 +22,8 @@ export { MessageMarkdownSerializer } from './schema/markdown/messageSerializer';
 export { fullSchema } from './schema/article';
 export { messageSchema } from './schema/message';
 
-export function wootArticleWriterSetup(props) {
-  let plugins = [
+export function omnichannelArticleWriterSetup(props) {
+  return [
     history(),
     baseKeyMaps(props.schema),
     blocksInputRule(props.schema),
@@ -46,17 +40,15 @@ export function wootArticleWriterSetup(props) {
     }),
     new Plugin({
       props: {
-        attributes: { class: 'ProseMirror-woot-style' },
+        attributes: { class: 'ProseMirror-omnichannel-style' },
       },
     }),
     ...(props.plugins || []),
   ];
-
-  return plugins;
 }
 
-export function wootMessageWriterSetup(props) {
-  let plugins = [
+export function omnichannelMessageWriterSetup(props) {
+  return [
     ...(props.plugins || []),
     history(),
     baseKeyMaps(props.schema),
@@ -73,10 +65,8 @@ export function wootMessageWriterSetup(props) {
     }),
     new Plugin({
       props: {
-        attributes: { class: 'ProseMirror-woot-style' },
+        attributes: { class: 'ProseMirror-omnichannel-style' },
       },
     }),
   ];
-
-  return plugins;
 }
